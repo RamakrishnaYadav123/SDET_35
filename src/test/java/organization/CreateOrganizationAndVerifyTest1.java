@@ -28,7 +28,7 @@ public class CreateOrganizationAndVerifyTest1 extends BaseClass {
 	@Test
 	public void CreateOrgTest() {
 		
-		// random number
+		// get random number
 		int ranNum = jLib.getRandomNUmber();
 		
 		// click enter the username &password and click on login button
@@ -38,6 +38,8 @@ public class CreateOrganizationAndVerifyTest1 extends BaseClass {
 		// click on the organization lookupimage
 		OrganizationPage opage=new OrganizationPage(driver);
 		opage.ClickonCreateOrgLkp();
+		
+		
 
        // enter the orgnizaton name select Industry dropdown &type dropdown click on save buton
 		CreateNewOrganiationPage cnpage=new CreateNewOrganiationPage(driver);

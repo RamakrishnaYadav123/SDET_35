@@ -34,7 +34,7 @@ public class BaseClass {
 	public void Dbconfig() {
 		dLib.Dbconnectin();
 	}
-	//@Parameters("BROWSER")
+@Parameters("BROWSER")
 @BeforeClass(groups= {"smokeTest","regressionTest"})
 public void launchTheBrowser() throws Throwable {
 	String BROWSER = fLib.getProperKeyValue("browser");

@@ -49,7 +49,7 @@ public class CreateNewOrganiationPage extends WebDriverUtility{
     }   	
 	
 	public void CreateNewOrg() {
-		getOrganazationTextEdit().sendKeys("ram");
+		getOrganazationTextEdit();
 		
 	}
 	public void Savebuton() {

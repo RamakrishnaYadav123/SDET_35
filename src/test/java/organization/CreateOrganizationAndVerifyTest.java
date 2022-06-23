@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateOrganizationAndVerifyTest extends BaseClass {
 	@Test
-	public void CreateOrgTest() {
+	public void CreateOrgTest() throws Throwable {
 		
 		// random number
 		int ranNum = jLib.getRandomNUmber();
@@ -38,10 +38,13 @@ public class CreateOrganizationAndVerifyTest extends BaseClass {
 		// click on the organization lookupimage
 		OrganizationPage opage=new OrganizationPage(driver);
 		opage.ClickonCreateOrgLkp();
+		
+		// fetch data from excel sheet
+		String name = eLib.getExcel("Organisation", 1, 3)+ranNum;
 
        // enter the orgnizaton name select Industry dropdown &type dropdown click on save buton
 		CreateNewOrganiationPage cnpage=new CreateNewOrganiationPage(driver);
-		cnpage.CreateNewOrg();
+		cnpage.getOrganazationTextEdit().sendKeys(name);
 		cnpage.selectIndustry();
 		cnpage.selectType();
 		cnpage.getSavaButon().click();
